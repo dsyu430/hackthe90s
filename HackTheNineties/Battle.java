@@ -1,3 +1,4 @@
+
     import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
     
     /**
@@ -17,18 +18,20 @@
         boolean playerTurn = true;
         boolean enemyTurn = false;
         boolean soundPlayed = false;
-        
+        int stage = 0;
+        Actor sprite = null;
         /**
          * Constructor for objects of class Battle.
          * 
          */
     
-        public Battle()
+        public Battle(Actor sprite, int stage)
         {    
             // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
             super(600, 400, 1);
     
-    
+             this.stage = stage;
+             this.sprite = sprite;
             addObject(p1, 100, 330);
             addObject(e, 500, 100);
             addObject(b1, 500, 280);
@@ -67,8 +70,16 @@
             addObject(ea, 500, 100);           
         }
         
-        if(e.health == 0) {
-            Greenfoot.setWorld(vw);
+        if(e.health <= 0 || p1.health <= 0) {
+            //Greenfoot.setWorld(vw);
+            if(stage == 0) {
+                Greenfoot.setWorld(new Bottom(sprite, true));
+            } else if(stage == 1) {
+                Greenfoot.setWorld(new Middle(sprite, true));
+            } else if(stage == 2) {
+                Greenfoot.setWorld(new Top(sprite, true));
+            }
+
         }
     }
     

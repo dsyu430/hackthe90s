@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BattleSprite extends Actor
 {
-    private int health = 10;
+    public int health = 10;
 
     public BattleSprite(){
         GreenfootImage image = getImage();
