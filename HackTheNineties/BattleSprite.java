@@ -26,7 +26,7 @@ public class BattleSprite extends Actor
         move(30);
         Greenfoot.delay(5);
         move(-30);
-        if(health == 0) {
+        if(health <= 0) {
             getWorld().removeObject(this);
             
         }

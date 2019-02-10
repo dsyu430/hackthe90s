@@ -13,7 +13,7 @@
         Button b1 = new Button();
         Button b2 = new Button();
         
-        Victory vw = new Victory();
+        Bottom vw = new Bottom();
         boolean playerTurn = true;
         boolean enemyTurn = false;
         boolean soundPlayed = false;

@@ -55,7 +55,7 @@
             move(-30);
     
             getWorld().showText("HP: " + health, 400,100); 
-            if(health == 0) {
+            if(health <= 0) {
                 getWorld().removeObject(this);
                 
             }
